@@ -12,5 +12,14 @@ export const theme = createTheme({
         otherColor: {
             main: "#999"
         }
+    },
+    breakpoints: {
+        values: {
+            xs: 479,
+            sm: 756,
+            md: 992,
+            lg: 1200,
+            xl: 1536
+        }
     }
 });

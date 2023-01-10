@@ -12,11 +12,21 @@ import {
     ListItemText,
     Typography
 } from "@mui/material";
+import { theme } from "../../../theme.js";
 
 const Rightbar = () => {
     return (
-        <Box flex={1} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
-            <Box position="fixed" width={300} right={0}>
+        <Box
+            flex={1}
+            p={2}
+            sx={{
+                display: {
+                    [theme.breakpoints.down("md")]: { display: "none" },
+                    lg: "block"
+                }
+            }}
+        >
+            <Box position="fixed" width={300}>
                 <Typography variant="h6" fontWeight={100}>
                     Online Friends
                 </Typography>
