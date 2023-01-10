@@ -10,6 +10,7 @@ import {
 import "./styles/app.css";
 import Header from "./components/common/Header";
 import Sidebar from "./components/common/Sidebar";
+import Rightbar from "./components/common/Rightbar";
 
 const App: React.FC = () => {
     const [mode, setMode] = useState<PaletteMode>("dark");
@@ -34,8 +35,10 @@ const App: React.FC = () => {
                         direction="row"
                         spacing={2}
                         justifyContent="space-between"
+                        sx={{ height: "100%" }}
                     >
                         <Sidebar />
+                        <Rightbar />
                     </Stack>
                 </Box>
             </ThemeProvider>
