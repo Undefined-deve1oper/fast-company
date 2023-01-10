@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import {
     AppBar,
     Avatar,
     Badge,
-    InputBase,
     Menu,
     MenuItem,
-    Toolbar,
     Typography,
-    styled,
-    Button,
-    Box
+    Button
 } from "@mui/material";
 import {
     Mail,
@@ -18,39 +14,14 @@ import {
     People,
     Search as SearchIcon
 } from "@mui/icons-material";
-
-const StyledToolbar = styled(Toolbar)({
-    display: "flex",
-    justifyContent: "space-between"
-});
-
-const Search = styled("div")(({ theme }) => ({
-    backgroundColor: "white",
-    padding: "0 10px",
-    borderRadius: theme.shape.borderRadius,
-    width: "40%",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "10px",
-    color: theme.palette.primary.main
-}));
-const IconsBox = styled(Box)(({ theme }) => ({
-    display: "none",
-    alignItems: "center",
-    gap: "20px",
-    [theme.breakpoints.up("sm")]: {
-        display: "flex"
-    }
-}));
-const UserBox = styled(Box)(({ theme }) => ({
-    display: "flex",
-    alignItems: "center",
-    gap: "10px",
-    [theme.breakpoints.up("sm")]: {
-        display: "none"
-    }
-}));
+import { NavLink } from "react-router-dom";
+import {
+    IconsBox,
+    Search,
+    SearchInput,
+    StyledToolbar,
+    UserBox
+} from "./styles/styledHeader";
 
 const Header: React.FC = () => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -66,15 +37,18 @@ const Header: React.FC = () => {
     return (
         <AppBar position="sticky">
             <StyledToolbar>
-                <Typography
-                    variant="h6"
-                    sx={{ display: { xs: "none", sm: "block" } }}
-                >
-                    Fast Company
-                </Typography>
+                <NavLink to="/" className="logo">
+                    <People sx={{ display: { xs: "block", sm: "none" } }} />
+                    <Typography
+                        variant="h6"
+                        sx={{ display: { xs: "none", sm: "block" } }}
+                    >
+                        Fast Company
+                    </Typography>
+                </NavLink>
                 <Search>
                     <SearchIcon />
-                    <InputBase placeholder="Search..." fullWidth />
+                    <SearchInput placeholder="Search..." fullWidth />
                 </Search>
                 <IconsBox>
                     <Badge badgeContent={4} color="error">
