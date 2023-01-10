@@ -32,7 +32,7 @@ const PostItem: React.FC = () => {
             <CardMedia
                 component="img"
                 height="20%"
-                image="https://www.gannett-cdn.com/-mm-/7e482a443740f52337eba28dff4794963c9ca5ad/c=0-307-2996-2000/local/-/media/2017/04/08/DetroitFreePress/DetroitFreePress/636272860177466947-2018-Dodge-Demon-32.JPG?width=2996&height=1693&fit=crop&format=pjpg&auto=webp"
+                image="https://wallpaper.dog/large/20338264.jpg"
                 alt="Paella dish"
             />
             <CardContent>

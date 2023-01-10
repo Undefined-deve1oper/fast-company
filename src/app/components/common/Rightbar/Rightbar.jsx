@@ -21,18 +21,18 @@ const Rightbar = () => {
             p={2}
             sx={{
                 display: {
-                    [theme.breakpoints.down("md")]: { display: "none" },
-                    lg: "block"
+                    [theme.breakpoints.down("lg")]: { display: "none" },
+                    md: "block"
                 }
             }}
         >
-            <Box position="fixed" width={300}>
+            <Box position="fixed" width={280} right={10}>
                 <Typography variant="h6" fontWeight={100}>
                     Online Friends
                 </Typography>
                 <AvatarGroup
                     sx={{ display: "flex", justifyContent: "start" }}
-                    max={7}
+                    max={5}
                 >
                     <Avatar
                         alt="Remy Sharp"
@@ -71,7 +71,7 @@ const Rightbar = () => {
                 <Typography variant="h6" fontWeight={100} mt={2} mb={2}>
                     Latest Photos
                 </Typography>
-                <ImageList cols={3} rowHeight={100} gap={5}>
+                <ImageList cols={2} rowHeight={100} gap={5}>
                     <ImageListItem>
                         <img
                             src={
@@ -87,22 +87,10 @@ const Rightbar = () => {
                     <ImageListItem>
                         <img
                             src={
-                                "https://focus.ua/static/storage/thumbs/920x465/7/5f/b274d2a2-4dc57d06dd0d61277c07c738eb5ea5f7.jpg?v=1764_1"
+                                "https://i.ytimg.com/vi/Uy-mSOwUndM/maxresdefault.jpg"
                             }
                             srcSet={
-                                "https://focus.ua/static/storage/thumbs/920x465/7/5f/b274d2a2-4dc57d06dd0d61277c07c738eb5ea5f7.jpg?v=1764_1"
-                            }
-                            alt={"Image"}
-                            loading="lazy"
-                        />
-                    </ImageListItem>
-                    <ImageListItem>
-                        <img
-                            src={
-                                "https://focus.ua/static/storage/thumbs/920x465/7/5f/b274d2a2-4dc57d06dd0d61277c07c738eb5ea5f7.jpg?v=1764_1"
-                            }
-                            srcSet={
-                                "https://focus.ua/static/storage/thumbs/920x465/7/5f/b274d2a2-4dc57d06dd0d61277c07c738eb5ea5f7.jpg?v=1764_1"
+                                "https://i.ytimg.com/vi/Uy-mSOwUndM/maxresdefault.jpg"
                             }
                             alt={"Image"}
                             loading="lazy"
@@ -115,7 +103,7 @@ const Rightbar = () => {
                 <List
                     sx={{
                         width: "100%",
-                        maxWidth: 360,
+                        maxWidth: 280,
                         bgcolor: "background.paper"
                     }}
                 >

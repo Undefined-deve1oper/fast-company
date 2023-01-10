@@ -1,6 +1,7 @@
 import React from "react";
 import {
     Box,
+    Icon,
     List,
     ListItem,
     ListItemButton,
@@ -18,8 +19,14 @@ import {
     Settings,
     Storefront
 } from "@mui/icons-material";
+import { RoutesNavType } from "../../../router/routes";
+import { NavLink } from "react-router-dom";
 
-const Sidebar: React.FC = () => {
+type SidebarType = {
+    routes: RoutesNavType[];
+};
+
+const Sidebar: React.FC<SidebarType> = ({ routes }) => {
     return (
         <Box
             bgcolor={"background.default"}
@@ -30,62 +37,18 @@ const Sidebar: React.FC = () => {
         >
             <Box position={"fixed"}>
                 <List>
-                    <ListItem disablePadding>
-                        <ListItemButton component={"a"} href="/home">
-                            <ListItemIcon>
-                                <Home />
-                            </ListItemIcon>
-                            <ListItemText primary="Home page" />
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component={"a"} href="/home">
-                            <ListItemIcon>
-                                <Article />
-                            </ListItemIcon>
-                            <ListItemText primary="Pages" />
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component={"a"} href="/home">
-                            <ListItemIcon>
-                                <People />
-                            </ListItemIcon>
-                            <ListItemText primary="Groups" />
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component={"a"} href="/home">
-                            <ListItemIcon>
-                                <Storefront />
-                            </ListItemIcon>
-                            <ListItemText primary="Marketplace" />
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component={"a"} href="/home">
-                            <ListItemIcon>
-                                <Person />
-                            </ListItemIcon>
-                            <ListItemText primary="Friends" />
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component={"a"} href="/home">
-                            <ListItemIcon>
-                                <Settings />
-                            </ListItemIcon>
-                            <ListItemText primary="Settings" />
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component={"a"} href="/simple-list">
-                            <ListItemIcon>
-                                <AccountBox />
-                            </ListItemIcon>
-                            <ListItemText primary="Profile" />
-                        </ListItemButton>
-                    </ListItem>
+                    {routes.map((route) => (
+                        <NavLink to={route.path}>
+                            <ListItemButton>
+                                {route.icon && (
+                                    <ListItemIcon>
+                                        <Icon component={route.icon} />
+                                    </ListItemIcon>
+                                )}
+                                <ListItemText primary={route.name} />
+                            </ListItemButton>
+                        </NavLink>
+                    ))}
                     <ListItem disablePadding>
                         <ListItemButton component={"a"} href="/simple-list">
                             <ListItemIcon>

@@ -5,7 +5,7 @@ import CreatePost from "../CreatePost";
 
 const PostList: React.FC = () => {
     return (
-        <Box flex={2} p={2}>
+        <Box>
             <Box>
                 <PostItem />
                 <PostItem />
