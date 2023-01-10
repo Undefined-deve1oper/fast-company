@@ -17,7 +17,7 @@ const Search = styled("div")(({ theme }) => ({
     alignItems: "center",
     justifyContent: "center",
     gap: "10px",
-    color: theme.palette.primary.main
+    color: theme.palette.grey[500]
 }));
 const IconsBox = styled(Box)(({ theme }) => ({
     display: "none",
@@ -36,7 +36,7 @@ const UserBox = styled(Box)(({ theme }) => ({
     }
 }));
 const SearchInput = styled(InputBase)(({ theme }) => ({
-    color: theme.palette.primary.main,
+    color: theme.palette.grey[500],
     padding: "0px",
     "& .MuiInputBase-input": {
         padding: "0px"
