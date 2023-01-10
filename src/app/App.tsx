@@ -11,6 +11,7 @@ import "./styles/app.css";
 import Header from "./components/common/Header";
 import Sidebar from "./components/common/Sidebar";
 import Rightbar from "./components/common/Rightbar";
+import { PostList } from "./components/common/Posts";
 
 const App: React.FC = () => {
     const [mode, setMode] = useState<PaletteMode>("dark");
@@ -38,6 +39,7 @@ const App: React.FC = () => {
                         sx={{ height: "100%" }}
                     >
                         <Sidebar />
+                        <PostList />
                         <Rightbar />
                     </Stack>
                 </Box>
