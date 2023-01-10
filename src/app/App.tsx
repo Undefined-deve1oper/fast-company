@@ -6,6 +6,8 @@ import {
     PaletteMode,
     ThemeProvider
 } from "@mui/material";
+import "./styles/app.css";
+import Header from "./components/common/Header";
 
 const App: React.FC = () => {
     const [mode, setMode] = useState<PaletteMode>("light");
@@ -21,7 +23,7 @@ const App: React.FC = () => {
             <CssBaseline />
             <ThemeProvider theme={darkTheme}>
                 <Box bgcolor={"background.default"} color={"text.primary"}>
-                    dsfdkfsjkn
+                    <Header />
                 </Box>
             </ThemeProvider>
         </>
